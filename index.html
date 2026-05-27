@@ -1,0 +1,252 @@
+Ente<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>للتواصل مع صاحب المحفظة</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-color: #f7f9fc;
+            --card-bg: #ffffff;
+            --text-main: #0c1a30;
+            --color-blue: #1d75e5;
+            --color-navy: #0f1e36;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 1. اللوجو / الصورة الشخصية */
+        .profile-img {
+            width: 130px;
+            height: 130px;
+            border-radius: 28px;
+            object-fit: cover;
+            margin-bottom: 25px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+            border: 3px solid #ffffff;
+        }
+
+        /* العنوان الرئيسي فوق صندوق التواصل */
+        .main-heading {
+            color: var(--text-main);
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .title-divider {
+            width: 45px;
+            height: 4px;
+            background-color: var(--color-blue);
+            border-radius: 2px;
+            margin: 0 auto 20px auto;
+        }
+
+        /* 2. صندوق أزرار الاتصال الموحد */
+        .contact-card-box {
+            background-color: var(--card-bg);
+            border-radius: 24px;
+            padding: 20px;
+            width: 100%;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+            margin-bottom: 20px;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+        }
+
+        .line-row {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .line-row:first-child {
+            margin-bottom: 18px;
+            padding-bottom: 18px;
+            border-bottom: 1px dashed #e2e8f0; /* خط فاصل خفيف بين الخطين داخل المربع */
+        }
+
+        .line-tag {
+            font-size: 13px;
+            color: #7e8b9b;
+            text-align: right;
+            margin-bottom: 8px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .line-tag i {
+            color: var(--color-blue);
+            font-size: 11px;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .btn-transparent {
+            flex: 1;
+            padding: 10px 15px;
+            border: 2px solid;
+            background: transparent;
+            border-radius: 14px;
+            font-size: 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-call {
+            border-color: var(--color-blue);
+            color: var(--color-blue);
+        }
+
+        .btn-whatsapp {
+            border-color: #25d366;
+            color: #25d366;
+        }
+
+        .btn-transparent:hover {
+            opacity: 0.8;
+            transform: translateY(-1px);
+        }
+
+        /* 3. صندوق المحتوى السفلي (الكارت الأبيض للأحاديث والآية) */
+        .content-card {
+            background-color: var(--card-bg);
+            border-radius: 24px;
+            padding: 22px 20px;
+            width: 100%;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+            margin-bottom: 25px;
+        }
+
+        /* مستطيلات النصوص بلون موحد متناسق */
+        .text-block {
+            width: 100%;
+            padding: 16px 20px;
+            border-radius: 16px;
+            color: #ffffff;
+            font-size: 14.5px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            line-height: 1.6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--color-navy);
+            box-shadow: 0 4px 12px rgba(15, 30, 54, 0.12);
+        }
+
+        .text-block:last-child {
+            margin-bottom: 0;
+        }
+
+        /* الحقوق السفلية */
+        .footer {
+            font-size: 13px;
+            color: #7e8b9b;
+            margin-top: 5px;
+            direction: ltr;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <img src="https://via.placeholder.com/150" alt="صاحب المحفظة" class="profile-img">
+
+        <h2 class="main-heading">للتواصل مع صاحب المحفظه</h2>
+        <div class="title-divider"></div>
+
+        <div class="contact-card-box">
+            
+            <div class="line-row">
+                <div class="line-tag"><i class="fa-solid fa-circle"></i> الخط الأول الرئيسي</div>
+                <div class="contact-buttons">
+                    <a href="tel:+201214652833" class="btn-transparent btn-call">
+                        <i class="fa-solid fa-phone"></i>
+                        مكالمة
+                    </a>
+                    <a href="https://wa.me/201214652833" class="btn-transparent btn-whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        واتساب
+                    </a>
+                </div>
+            </div>
+
+            <div class="line-row">
+                <div class="line-tag"><i class="fa-solid fa-circle"></i> الخط الثاني الاحتياطي</div>
+                <div class="contact-buttons">
+                    <a href="tel:+201109358238" class="btn-transparent btn-call">
+                        <i class="fa-solid fa-phone"></i>
+                        مكالمة
+                    </a>
+                    <a href="https://wa.me/201109358238" class="btn-transparent btn-whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        واتساب
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="content-card">
+            <div class="text-block">
+                {إِنَّ اللَّهَ يَأْمُرُكُمْ أَنْ تُؤَدُّوا الْأَمَانَاتِ إِلَىٰ أَهْلِهَا}
+            </div>
+
+            <div class="text-block">
+                "من رد ضالة فله أجرها"
+            </div>
+
+            <div class="text-block">
+                "والله في عون العبد ما كان العبد في عون أخيه"
+            </div>
+        </div>
+
+        <div class="footer">
+            © 2026 Mohamed Salem | Tech - جميع الحقوق محفوظة
+        </div>
+
+    </div>
+
+</body>
+</html>
