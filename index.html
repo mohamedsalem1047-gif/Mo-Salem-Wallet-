@@ -1,4 +1,4 @@
-Ente<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -29,21 +29,21 @@ Ente<!DOCTYPE html>
             background-color: var(--bg-color);
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start; /* تم التعديل لتبدأ الصفحة بمرونة من الأعلى */
             min-height: 100vh;
-            padding: 20px;
+            padding: 40px 20px; /* زيادة الهامش العلوي لإنزال المحتوى لأسفل الشاشة */
         }
 
         .container {
             width: 100%;
             max-width: 400px;
-            text-align: center;
+            text-align: center; /* توسيط كل النصوص والعناصر داخلياً */
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        /* 1. اللوجو / الصورة الشخصية */
+        /* 1. اللوجو / الصورة الشخصية مع الرابط الجديد */
         .profile-img {
             width: 130px;
             height: 130px;
@@ -60,6 +60,7 @@ Ente<!DOCTYPE html>
             font-size: 22px;
             font-weight: 700;
             margin-bottom: 5px;
+            text-align: center; /* تأكيد التوسيط */
         }
 
         .title-divider {
@@ -90,13 +91,13 @@ Ente<!DOCTYPE html>
         .line-row:first-child {
             margin-bottom: 18px;
             padding-bottom: 18px;
-            border-bottom: 1px dashed #e2e8f0; /* خط فاصل خفيف بين الخطين داخل المربع */
+            border-bottom: 1px dashed #e2e8f0;
         }
 
         .line-tag {
             font-size: 13px;
             color: #7e8b9b;
-            text-align: right;
+            text-align: right; /* محاذاة النص التوضيحي للخط جهة اليمين داخل الكارت العربي */
             margin-bottom: 8px;
             font-weight: 700;
             display: flex;
@@ -147,7 +148,7 @@ Ente<!DOCTYPE html>
             transform: translateY(-1px);
         }
 
-        /* 3. صندوق المحتوى السفلي (الكارت الأبيض للأحاديث والآية) */
+        /* 3. صندوق المحتوى السفلي */
         .content-card {
             background-color: var(--card-bg);
             border-radius: 24px;
@@ -169,7 +170,8 @@ Ente<!DOCTYPE html>
             line-height: 1.6;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: center; /* توسيط الآيات والأحاديث داخل المستطيلات */
+            text-align: center;
             background-color: var(--color-navy);
             box-shadow: 0 4px 12px rgba(15, 30, 54, 0.12);
         }
@@ -184,6 +186,7 @@ Ente<!DOCTYPE html>
             color: #7e8b9b;
             margin-top: 5px;
             direction: ltr;
+            text-align: center;
         }
     </style>
 </head>
@@ -191,7 +194,7 @@ Ente<!DOCTYPE html>
 
     <div class="container">
         
-        <img src="https://via.placeholder.com/150" alt="صاحب المحفظة" class="profile-img">
+        <img src="https://raw.githubusercontent.com/mohamedsalem1047-gif/Mo-Salem-Wallet-/refs/heads/main/1779916613893.png" alt="صاحب المحفظة" class="profile-img">
 
         <h2 class="main-heading">للتواصل مع صاحب المحفظه</h2>
         <div class="title-divider"></div>
