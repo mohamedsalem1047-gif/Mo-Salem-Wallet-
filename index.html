@@ -6,7 +6,7 @@
     <title>للتواصل مع صاحب المحفظة</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -15,7 +15,11 @@
             --card-bg: #ffffff;
             --text-main: #0c1a30;
             --color-blue: #1d75e5;
-            --color-navy: #0f1e36;
+            
+            /* ألوان التنبيه الجاذبة للانتباه والمريحة في نفس الوقت */
+            --alert-bg: #fff9e6; /* خلفية صفراء دافئة للتنبيه */
+            --alert-border: #ffe082; /* حد ذهبي ناعم */
+            --alert-text: #795548; /* لون خط بني داكن متناسق جداً مع الأصفر */
         }
 
         * {
@@ -29,21 +33,21 @@
             background-color: var(--bg-color);
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* تم التعديل لتبدأ الصفحة بمرونة من الأعلى */
+            align-items: flex-start;
             min-height: 100vh;
-            padding: 40px 20px; /* زيادة الهامش العلوي لإنزال المحتوى لأسفل الشاشة */
+            padding: 40px 20px;
         }
 
         .container {
             width: 100%;
             max-width: 400px;
-            text-align: center; /* توسيط كل النصوص والعناصر داخلياً */
+            text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        /* 1. اللوجو / الصورة الشخصية مع الرابط الجديد */
+        /* 1. اللوجو / الصورة الشخصية */
         .profile-img {
             width: 130px;
             height: 130px;
@@ -60,7 +64,7 @@
             font-size: 22px;
             font-weight: 700;
             margin-bottom: 5px;
-            text-align: center; /* تأكيد التوسيط */
+            text-align: center;
         }
 
         .title-divider {
@@ -97,7 +101,7 @@
         .line-tag {
             font-size: 13px;
             color: #7e8b9b;
-            text-align: right; /* محاذاة النص التوضيحي للخط جهة اليمين داخل الكارت العربي */
+            text-align: right;
             margin-bottom: 8px;
             font-weight: 700;
             display: flex;
@@ -148,7 +152,7 @@
             transform: translateY(-1px);
         }
 
-        /* 3. صندوق المحتوى السفلي */
+        /* 3. صندوق المحتوى السفلي بحركة (اهتزاز دوري متقطع) */
         .content-card {
             background-color: var(--card-bg);
             border-radius: 24px;
@@ -156,24 +160,39 @@
             width: 100%;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
             margin-bottom: 25px;
+            border: 1px solid rgba(0, 0, 0, 0.01);
+            
+            /* الإجمالي 7 ثوانٍ: ثانية ونصف اهتزاز، و 5 ثوانٍ ونصف وقوف تام، وتتكرر للأبد */
+            animation: alertInterval 7s ease-in-out infinite;
         }
 
-        /* مستطيلات النصوص بلون موحد متناسق */
+        /* توزيع الحركة: من 0% لـ 20% اهتزاز (يساوي تقريباً 1.4 ثانية)، ومن 20% لـ 100% ثبات تام للاستراحة والقراءة */
+        @keyframes alertInterval {
+            0%, 20%, 100% { transform: translate3d(0, 0, 0); scale: 1; }
+            2%, 18% { transform: translate3d(-1px, 0, 0); }
+            4%, 16% { transform: translate3d(2px, 0, 0); }
+            6%, 10%, 14% { transform: translate3d(-3px, 0, 0); scale: 1.02; box-shadow: 0 15px 30px rgba(255, 193, 7, 0.15); }
+            8%, 12% { transform: translate3d(3px, 0, 0); scale: 1.02; }
+        }
+
+        /* مستطيلات النصوص بشكل الإنذار الفاتح والمميز */
         .text-block {
             width: 100%;
             padding: 16px 20px;
             border-radius: 16px;
-            color: #ffffff;
-            font-size: 14.5px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            line-height: 1.6;
+            color: var(--alert-text);
+            font-family: 'Amiri', serif;
+            font-size: 19px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            line-height: 1.5;
             display: flex;
             align-items: center;
-            justify-content: center; /* توسيط الآيات والأحاديث داخل المستطيلات */
+            justify-content: center;
             text-align: center;
-            background-color: var(--color-navy);
-            box-shadow: 0 4px 12px rgba(15, 30, 54, 0.12);
+            background-color: var(--alert-bg);
+            border: 1px solid var(--alert-border);
+            box-shadow: 0 2px 8px rgba(255, 224, 130, 0.2);
         }
 
         .text-block:last-child {
